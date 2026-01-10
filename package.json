@@ -1,0 +1,21 @@
+{
+  "name": "apollonia_dental_hcm",
+  "version": "1.0.0",
+  "description": "A CRUD application for Apolloina Dental Practice for digitalisation of their HCM & CRM applications",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.19.2",
+    "odata-v4-mongodb": "^0.1.12",
+    "odata-v4-server": "^0.2.13"
+  }
+}
