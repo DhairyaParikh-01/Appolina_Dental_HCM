@@ -40,7 +40,7 @@ router.put('/updatedepatment/:id', authenticateUser, verifyUserRole("admin"), as
             newDepartment.DeparmentName = DeparmentName;
         }
         if(location){
-            newDepartment.location = location;
+            newDepartment.location = location; 
         }
 
         depatmentToBeUpdated = await Departments.findByIdAndUpdate(req.params.id, {$set: newDepartment}, {new:true});
