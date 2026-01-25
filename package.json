@@ -14,8 +14,6 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.3",
-    "mongoose": "^8.19.2",
-    "odata-v4-mongodb": "^0.1.12",
-    "odata-v4-server": "^0.2.13"
+    "mongoose": "^8.19.2"
   }
 }
