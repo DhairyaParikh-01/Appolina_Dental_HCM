@@ -19,9 +19,9 @@ connect_to_mongo();
 
 app.use(express.json());
 // API Routes for an http server
-app.use('/api/auth', AuthRoutes);
-app.use('/api/employees', EmployeeRoutes);
-app.use('/api/departments', DepartmentRoutes);
+app.use('/api/auth', require('./api/auth'));
+app.use('/api/employees', require('./api/employees'));
+app.use('/api/departments', require('./api/departments'));
 
 // app.listen(port, () => {
 //   console.log(`Example app listening on port ${port}`)
