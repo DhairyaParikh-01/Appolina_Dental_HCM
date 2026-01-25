@@ -12,9 +12,9 @@ require('dotenv').config();
 
 connect_to_mongo();
 
-app.get('/', (req, res) => {
-  res.send('Hello World! this is to test verel deployments')
-})
+// app.get('/', (req, res) => {
+//   res.send('Hello World! this is to test verel deployments')
+// })
 
 
 app.use(express.json());
