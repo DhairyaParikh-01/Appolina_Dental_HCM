@@ -22,7 +22,7 @@ app.use(express.json());
 // Implementing code to enable CORS for our frontend application:
 
 app.use(cors({
-  origin: "https://6000-firebase-studio-1766847571693.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev", // frontend URL
+  origin: process.env.CORS_BASE_URL, // frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "auth-token"],
   credentials: true
