@@ -4,6 +4,7 @@ const EmployeeRoutes = require('./api/employees');
 const DepartmentRoutes = require('./api/departments');
 const AuthRoutes = require('./api/auth');
 const connect_to_mongo = require('./db_connection');
+const cors = require("cors");
 const port = 3000
 require('dotenv').config();
 
