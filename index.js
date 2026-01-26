@@ -18,6 +18,16 @@ connect_to_mongo();
 
 
 app.use(express.json());
+
+// Implementing code to enable CORS for our frontend application:
+
+app.use(cors({
+  origin: "https://6000-firebase-studio-1766847571693.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev", // frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "auth-token"],
+  credentials: true
+}));
+
 // API Routes for an http server
 app.use('/api/auth', require('./api/auth'));
 app.use('/api/employees', require('./api/employees'));
