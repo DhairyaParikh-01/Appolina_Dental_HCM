@@ -1,4 +1,4 @@
-// const mongoose  = require('mongoose');
+const mongoose  = require('mongoose');
 // require('dotenv').config();
 
 
@@ -23,7 +23,6 @@
 Refactored code to connect with MongoDB spcefically for serverless architrecture like Vercel-----------------------------------------
 */
 
-import mongoose from "mongoose";
 
 let cached = global._mongoose;
 
