@@ -10,7 +10,6 @@ require('dotenv').config();
 
 
 
-
 connect_to_mongo();
 
 // app.get('/', (req, res) => {
