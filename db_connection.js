@@ -30,17 +30,25 @@ if (!cached) {
   cached = global._mongoose = { conn: null, promise: null };
 }
 
-export async function connectDB() {
-  if (cached.conn) return cached.conn;
-
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(process.env.MONGODB_URL, {
-      bufferCommands: false,
-      maxPoolSize: 5,
-      family: 4
-    });
-  }
-
-  cached.conn = await cached.promise;
-  return cached.conn;
+const connect_to_mongo = async function connectDB() {
+    try{
+        if (cached.conn) return cached.conn;
+      
+        if (!cached.promise) {
+          cached.promise = mongoose.connect(process.env.MONGODB_URL, {
+            bufferCommands: false,
+            maxPoolSize: 5,
+            family: 4
+          });
+        }
+      
+        cached.conn = await cached.promise;
+        console.log("Connected to MongoDB Successfully!");
+        return cached.conn;
+    }
+    catch(err){
+        console.log(err);
+    }
 }
+
+module.exports = connect_to_mongo;
