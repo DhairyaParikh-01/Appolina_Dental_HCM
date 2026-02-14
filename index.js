@@ -9,9 +9,6 @@ const port = 3000
 require('dotenv').config();
 
 
-
-connect_to_mongo();
-
 // app.get('/', (req, res) => {
 //   res.send('Hello World! this is to test verel deployments')
 // })
@@ -27,6 +24,17 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "auth-token"],
   credentials: true
 }));
+
+// Ensure a database connection exists for every invocation (cached in db_connection.js)
+app.use(async (req, res, next) => {
+  try {
+    await connect_to_mongo();
+    next();
+  } catch (err) {
+    console.error('Mongo connection failed', err);
+    res.status(500).send('Database connection error');
+  }
+});
 
 // API Routes for an http server
 app.use('/api/auth', require('./api/auth'));
